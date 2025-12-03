@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EmployeeOrderingSystem.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employees";   // Page title
+}
+
+<h1>Employees</h1>
+
+<p>
+    <!-- Link to create a new employee -->
+    <a asp-action="Create">Create New Employee</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Employee Number</th>
+            <th>Balance</th>
+            <th>Last Deposit Month</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)   // Loop through employees
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.EmployeeNumber)</td>
+                <td>R @Html.DisplayFor(modelItem => item.Balance)</td>
+                <td>@item.LastDepositMonth.ToString("yyyy-MM")</td>
+                <td>
+                    <!-- Link to details page -->
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
