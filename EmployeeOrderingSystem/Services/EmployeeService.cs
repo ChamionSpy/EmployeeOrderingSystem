@@ -56,5 +56,15 @@ namespace EmployeeOrderingSystem.Services
                 await _context.SaveChangesAsync();
             }
         }
+
+        Task<string?> IEmployeeService.GetAllEmployeesAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<string?> IEmployeeService.GetEmployeeByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
