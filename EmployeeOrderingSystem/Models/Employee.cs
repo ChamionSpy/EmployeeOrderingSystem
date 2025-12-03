@@ -25,5 +25,7 @@ namespace EmployeeOrderingSystem.Models
 
         // Last month a deposit was made
         public DateTime LastDepositMonth { get; set; } = new DateTime(1900, 1, 1);
+        // Navigation property for orders (will be used in Part 2)
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }
