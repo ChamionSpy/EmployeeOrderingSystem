@@ -21,5 +21,7 @@ namespace EmployeeOrderingSystem.Models
         [StringLength(20)]
         public string ContactNumber { get; set; } = string.Empty;
 
+        // Related menu items
+        public ICollection<MenuItem> MenuItems { get; set; } = new List<MenuItem>();
     }
 }
